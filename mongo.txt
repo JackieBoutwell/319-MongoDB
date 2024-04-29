@@ -1,0 +1,165 @@
+The Purpose of Databases
+
+Databases are used to store persistent data for an application, 
+which is any data that you would not want to lose even if the application is restarted.
+They provide a centralized location for this data to be placed, accessed, and manipulated.
+
+Due to their specialized nature, database management systems 
+also provide tools specifically tailored to creating data, 
+changing data, searching through data, deleting data, 
+and any other data manipulation task a developer 
+may need to undertake.
+
+Types of Databases
+
+There are many different types of databases available for different use cases, but a few are much more popular than others:
+Hierarchical Databases store data in a "family tree" structure, with each node having no more than one parent.
+The relatively complex navigation of this structure offers high performance through easy data access and fast querying (searching). 
+The Windows Registry is a hierarchical database system.
+
+-Hierarchical Databases-
+
+ store data in a "family tree" structure, with each node having no more than one parent.
+ The relatively complex navigation of this structure offers high performance through easy data access and fast querying (searching). 
+
+The Windows Registry is a hierarchical database system.
+
+-Relational Databases-
+
+store data in discrete tables which can be joined together by fields known as "foreign keys."
+For example, you could have a table with data about your application's users,
+and join that to a table that contains information about the purchases made by those users.
+
+Relational databases commonly use Structured Query Language (SQL) for data operations
+
+-Non-Relational Databases-
+
+store data in a variety of ways, and are often the most flexible database solution.
+They are commonly referred to as NoSQL databases, which stands for "not only SQL."
+
+MongoDB, the topic of this module, is a NoSQL, non-relational database management system
+
+MongoDB: a NoSQL Database
+
+As a NoSQL database, MongoDB allows developers an added layer of flexibility in determining how to model their data. 
+
+While MongoDB is one of the most 
+popular database solutions among 
+professional developers, many SQL 
+databases are still just as popular.
+
+Let's look at the history of SQL and NoSQL databases in order to better understand why you would choose one over the other for a specific application,
+and then look into the advantages that MongoDB provides.
+
+
+Types of NoSQL Databases
+
+Four major types of NoSQL databases emerged as popular options for developers, each with their own unique advantages and disadvantages:
+
+Document Databases
+Key-value Stores
+Column-oriented Databases
+Graph Databases
+
+-Document Databases-
+
+(like MongoDB) store data in JSON, Binary JSON (BSON), or XML documents.
+The familiarity of these formats means less translation required when using the data within an application.
+The data looks, feels, and acts like code, which allows developers to use it more directly.
+This also gives developers the flexibility to change the structure of data as the application's needs change. 
+An SQL database, by contrast, often requires data to be assembled and disassembled when being accessed by an application,
+and could require intervention by database administrators to change the structure of the data.
+
+-Key-Value Stores-
+
+store data in individual key-value pairs. This is the simplest form of a NoSQL database, and is often used for equally simple data.
+Most frequently, key-value databases are used for data that is accessed frequently or in real time, as the simplicity of the data structures allow for quick access.
+MongoDB's flexibility allows it to behave as a key-value database for use cases that prefer this implementation.
+
+-Column-Oriented-
+
+Databases store data similarly to a traditional relational database,
+but instead of organizing in rows, they use a column-oriented approach.
+This allows column-oriented databases to read specific pieces of data without requiring entire table entries,
+making them more efficient for data analytics. They can, for example,
+aggregate the entire value of a year's worth of sales data (a column) without needing to access all of the data associated with those sales (rows).
+
+-Graph Databases-
+store data as nodes, and focus primarily on the links or relationships between those nodes.
+Those connections are stored as elements of the database themselves, allowing graph databases to more easily search through those connections.
+Graph databases are not typically the sole solution for an application,
+and as such, are usually coupled with more traditional databases.
+Graph databases are used for applications like social networks or fraud detection.
+
+--The Advantages of MongoDB--
+
+-Full cloud-based developer data platform-
+
+MongoDB is much more than a database. It is a complete developer data platform.
+With MongoDB Atlas, the cloud offering by MongoDB, you have access to a collection of services that all integrate nicely with your database.
+ Amongst other things, you will have:
+The Performance Advisor, which provides you with recommendations to optimize your database.
+Atlas Search, a full-text search engine that uses the same MongoDB Query API as other queries.
+MongoDB Charts, an easy-to-use interface to create stunning dashboards and visualizations.
+Multi-cloud deployment, which is offered out of the box on any major cloud provider.
+And much more.
+
+-Flexible Document Schemas-
+
+MongoDB’s document model allows virtually any data structure to be modeled and manipulated easily. 
+MongoDB’s BSON data format, inspired by JSON, allows you to have objects in one collection with different sets of fields 
+(say, a middle name on a user only when applicable, or region-specific information that only applies to some records).
+MongoDB supports creating explicit schemas and validating data. 
+This flexibility is an incredible asset when handling real-world data and changes in requirements or environment.
+
+-Widely supported and code native access-
+
+Most databases force you to use heavy wrappers, like ORMs (Object-Relational Mappers), 
+to get data into Object form for use in programs. 
+MongoDB’s decision to store and represent data in a document format means that you can access it from any language,
+ in data structures that are native to that language (e.g., dictionaries in Python, objects in JavaScript, Maps in Java, etc.).
+
+ -Change-friendly design-
+
+ If you are accustomed to having to bring down your site or application in order to change the structure of your data, 
+ you are in luck: MongoDB is designed for change.
+We spend a lot of time and effort designing efficient processes and learning from our mistakes, but typically,
+ the database is slowing the whole thing down. There is no downtime required to change schemas,
+  and you can start writing new data to MongoDB at any time, without disrupting its operations.
+
+-Powerful querying and analytics-
+
+  What good is a database if you cannot find things inside it? 
+  MongoDB is designed to make data easy to access, and rarely to require joins or transactions, 
+  but when you need to do complex querying, it is more than up to the task.
+The MongoDB Query API allows you to query deep into documents, 
+and even perform complex analytics pipelines with just a few lines of declarative code.
+
+-Easy horizontal scale-out with sharding-
+
+MongoDB is designed from the ground up to be a distributed database, 
+create clusters with real-time replication, 
+and shard large or high-throughput collections across multiple clusters to sustain performance and scale horizontally
+
+-High performance (speed)-
+
+Thanks to the document model used in MongoDB, information can be embedded inside a 
+single document rather than relying on expensive join operations from traditional relational databases. 
+This makes queries much faster, and returns all of the necessary information in a single call to the database.
+When it comes to write performance, MongoDB offers functionalities to insert and update multiple records at 
+once with insertMany and updateMany. These two functions offer a significant performance boost when compared to batched writes in traditional databases.
+
+-Simple installation-
+
+With MongoDB Atlas, creating and setting up a MongoDB cluster is easier than ever. 
+With just a few clicks in the intuitive UI, you can deploy a new forever-free instance. 
+Within minutes, you will be able to connect to your database using the provided connection string.
+If you want to run MongoDB on your own hardware,
+ there are many ways to get started. You can install the community or enterprise version directly on a server. 
+ You can also create your own MongoDB container, or use a pre-built community container.
+
+ 
+
+
+
+  
